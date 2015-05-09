@@ -13,7 +13,7 @@
 [repositories]
   local
   local-Maven-Repository: file:///~/.m2/repository/jar, [organization]/[module]/[revision]/[type]s/[artifact](-[classifier]).[ext]
-  #oschina-nexus: http://maven.oschina.net/content/groups/public/
+  oschina-nexus: http://maven.oschina.net/content/groups/public/
   typesafe-ivy-releases: https://repo.typesafe.com/typesafe/ivy-releases/, [organization]/[module]/[revision]/[type]s/[artifact](-[classifier]).[ext], bootOnly
   maven-central
 

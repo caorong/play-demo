@@ -3,9 +3,25 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index
+GET        /                         controllers.Application.index
+GET        /h/:name                  controllers.Application.hello(name:String)
+GET        /items/$id<[0-9]+>        controllers.Application.hello(id:String)
+
+#GET        /p/:page                  controllers.Application.show(page)
+
+# parameters with fixed value
+GET        /p                        controllers.Application.show(page = "home")
+GET        /p/:page                  controllers.Application.show(page)
+
+# parameters with default value(non restful)  like /clients?page=3
+GET        /clients                  controllers.Application.list(page:Int ?= 1)
+
+# optional parameters  no parameters will show None
+GET        /api/list-all             controllers.Application.listoptional(version:Option[String])
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET        /assets/*file             controllers.Assets.at(path="/public", file)
 
-    
+
+
+
